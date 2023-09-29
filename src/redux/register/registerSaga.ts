@@ -27,7 +27,7 @@ function* getUser(action: any): any {
     yield put(setLoading(true));
     const response = yield call(
       postRequest,
-      `https://alive-pear-wasp.cyclic.cloud${endPoints.getUser}`,
+      import.meta.env.VITE_BACKEND_URL+endPoints.getUser,
       { code: code, registeredAs: registerAs },
       {}
     );
