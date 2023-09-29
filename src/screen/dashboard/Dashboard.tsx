@@ -1,6 +1,5 @@
 import { useSelector } from "react-redux";
 
-import NavBar from "../../components/navbar/Navbar";
 import Feed from "../../container/dashboard/Feed";
 import LeaderBoard from "../../container/dashboard/Leaderboard";
 import Sidebar from "../../container/dashboard/Sidebar";

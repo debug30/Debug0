@@ -1,10 +1,7 @@
-//react
-import { useEffect } from "react";
-
 //redux
 import { useDispatch, useSelector } from "react-redux";
 //actions
-import { chooseRole, closeModal } from "../../redux/register/registerActions";
+import { chooseRole } from "../../redux/register/registerActions";
 
 //assets
 import maintainerLogo from "../../assets/images/screw-driver.png";
@@ -17,11 +14,6 @@ const Register = () => {
 
   const handleChooseRole = (role: any) => {
     dispatch(chooseRole(role));
-  };
-
-  const handleCloseForm = () => {
-    dispatch(closeModal());
-    dispatch(chooseRole(""));
   };
 
   const handleLoginRequest = () => {

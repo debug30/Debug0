@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
-import { NavLink, useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Link } from "react-scroll";
 
 //actions
@@ -8,7 +8,6 @@ import { openModal } from "../../redux/register/registerActions";
 import classes from "./navbar.module.css";
 
 export default function NavBar() {
-  const location = useLocation();
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { authorized } = useSelector((state: any) => state.register);
