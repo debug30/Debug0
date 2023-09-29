@@ -1,0 +1,21 @@
+.icons {
+  cursor: pointer;
+}
+
+.icons svg path {
+  fill: #ffffff;
+}
+
+.icons svg circle {
+  fill: #ffffff;
+}
+
+.icons:hover svg path,
+.icons:hover svg circle {
+  fill: #fbdb75;
+}
+
+.icons:hover svg {
+  height: 35px;
+  width: 35px;
+}
