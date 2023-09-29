@@ -1,8 +1,8 @@
 import { useSelector } from "react-redux";
 
 //helpers
-import formatDate from "../../utils/helpers/formatData";
-import truncateText from "../../utils/helpers/trancateText";
+// import formatDate from "../../utils/helpers/formatData";
+// import truncateText from "../../utils/helpers/trancateText";
 
 // const DUMMY_PR = [
 //   {
