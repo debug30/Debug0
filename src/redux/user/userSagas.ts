@@ -18,7 +18,7 @@ function* getUserDataSaga(action: any): any {
     const token = action.payload.token;
     const response = yield call(
       getRequest,
-      `${import.meta.env.VITE_BACKEND_DEV_URL}${endPoints.getUserData}`,
+      `${import.meta.env.VITE_BACKEND_URL}${endPoints.getUserData}`,
       {
         Authorization: `Bearer ${token}`,
       }
