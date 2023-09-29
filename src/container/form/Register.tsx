@@ -20,7 +20,7 @@ const Register = () => {
     window.location.assign(
       `https://github.com/login/oauth/authorize?client_id=${
         import.meta.env.VITE_GITHUB_CLIENT_ID
-      }&redirect_uri=${`http://localhost:5173/?registeredAs=${registerAs}`}&allow_signup&scope=user:email%20user:name`
+      }&redirect_uri=${`https://debug0.tech/?registeredAs=${registerAs}`}&allow_signup&scope=user:email%20user:name`
     );
   };
 
