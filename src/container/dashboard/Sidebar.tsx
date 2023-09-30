@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router";
 
 import { setSelectedFeed } from "../../redux/dashboard/dashboardActions";
-import { logoutUser } from "../../redux/register/registerActions";
+import { logoutUser, setLoading } from "../../redux/register/registerActions";
 
 const Sidebar = () => {
   const { userData } = useSelector((state: any) => state.user);
@@ -10,6 +10,17 @@ const Sidebar = () => {
   const dispatch = useDispatch();
 
   const navigate = useNavigate();
+
+  const handleLogout = () => {
+    dispatch(setLoading(true));
+    dispatch(logoutUser());
+    const timeoutId = setTimeout(() => {
+      navigate("/");
+    }, 1000);
+    dispatch(setLoading(false));
+
+    return () => clearTimeout(timeoutId);
+  };
 
   return (
     <div className="md:w-[18rem] w-full h-full md:h-[100vh] flex flex-col items-center justify-between px-6 pt-16 pb-4 rounded-[10px_10px_0_0] md:rounded-[10px_0_0_10px] bg-opacity-5 backdrop-blur-md bg-[#7886c3] border-[1px] border-[#7886c342]">
@@ -37,10 +48,7 @@ const Sidebar = () => {
         </div>
         <div
           className={`h-[3rem] w-full box-border flex flex-row items-center justify-evenly text-white font-normal hover:font-bold p-3 hover:border-[1px] hover:border-[#7886c342] rounded-[8px] cursor-pointer hover:bg-[#ab78c317] uppercase`}
-          onClick={() => {
-            dispatch(logoutUser());
-            navigate("/");
-          }}
+          onClick={handleLogout}
         >
           LOGOUT
           <span>

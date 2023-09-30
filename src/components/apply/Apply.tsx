@@ -32,7 +32,7 @@ export default function Apply() {
         <Register />
       </Modal>
       <div className="bg-[#7b7bba] w-[90%] md:w-[40rem] rounded-[26px] overflow-hidden flex flex-col md:flex-row">
-        <div className="w-full h-full bg-gradient-to-r from-[#478EEE] to-[#9AFFFF] p-8 rounded-[0_26px_26px_26px] md:rounded-[0_26px_26px_0]">
+        <div className="w-full bg-gradient-to-r from-[#478EEE] to-[#9AFFFF] p-8 rounded-[0_26px_26px_26px] md:rounded-[0_26px_26px_0]">
           <div className="flex justify-center mb-4 h-[50px]">
             <img src={maintainerIcon} alt="maintainer-icon" />
           </div>
