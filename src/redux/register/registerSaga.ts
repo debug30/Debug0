@@ -27,7 +27,7 @@ function* getUser(action: any): any {
     yield put(setLoading(true));
     const response = yield call(
       postRequest,
-      import.meta.env.VITE_BACKEND_URL+endPoints.getUser,
+      import.meta.env.VITE_BACKEND_URL + endPoints.getUser,
       { code: code, registeredAs: registerAs },
       {}
     );
@@ -69,6 +69,7 @@ function* logoutUserSaga() {
   localStorage.removeItem(`${import.meta.env.VITE_LOCALSTORAGE_PREFIX}auth`);
   localStorage.removeItem(`${import.meta.env.VITE_LOCALSTORAGE_PREFIX}user`);
   yield put({ type: LOGOUT_USER });
+  
 }
 
 export function* watchGetUser() {

@@ -17,13 +17,16 @@ import "./App.css";
 import Home from "./screen/home/Home";
 import NotFound from "./screen/notFound/NotFound";
 import Dashboard from "./screen/dashboard/Dashboard";
+import Loader from "./utils/ui/Loader";
 
 const PREFIX = import.meta.env.VITE_LOCALSTORAGE_PREFIX;
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
   const dispatch = useDispatch();
-  const { authorized, token } = useSelector((state: any) => state.register);
+  const { authorized, token, isLoading } = useSelector(
+    (state: any) => state.register
+  );
   const navigate = useNavigate();
 
   const authDataStr: any = localStorage.getItem(`${PREFIX}auth`);
@@ -41,8 +44,8 @@ function App() {
       if (authData?.authorised && authData?.token) {
         dispatch(setToken(authData.token));
         dispatch(authoriseWithGithubSuccess());
-        navigate("/dashboard");
         dispatch(getUserData(authData.token));
+        navigate("/dashboard");
       }
     }, 2000);
 
@@ -83,6 +86,7 @@ function App() {
 
   return (
     <>
+      {isLoading && <Loader />}
       <Routes>
         {!loggedIn && <Route path="/" element={<Home />} />}
         {loggedIn && <Route path="/dashboard" element={<Dashboard />} />}

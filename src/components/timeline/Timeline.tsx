@@ -9,7 +9,7 @@ export default function Timeline() {
       </h2>
       <div className="w-full flex justify-center relative">
         <div
-          className="bg-center bg-cover w-[80%] relative flex flex-row justify-center"
+          className="hidden md:flex bg-center bg-cover md:w-[80%] relative flex-row justify-center"
           style={{ backgroundImage: `url(${timelineBG})` }}
         >
           <div className="mt-[17rem] mr-[1rem] flex flex-col gap-[10rem]">
@@ -54,6 +54,55 @@ export default function Timeline() {
             </div>
             <div className="w-[25rem] h-[7rem] rounded-[15px] bg-gradient-to-r from-[#de7a8b] via-[#eea6a6] to-[#fdd4db] flex flex-col justify-center items-center">
               <h2 className="text-[1.5rem] font-bold uppercase">
+                SWAGS AND CERTIFICATES
+              </h2>
+              <p className="text-[0.8rem]">NOV 1-5</p>
+            </div>
+          </div>
+        </div>
+        <div
+          className="flex md:hidden bg-center bg-contain bg-no-repeat md:w-[80%] relative flex-row justify-center"
+          style={{ backgroundImage: `url(${timelineBG})` }}
+        >
+          <div className="mt-4 flex flex-col gap-[3rem] items-center">
+            <div className="w-[80%] h-[7rem] rounded-[15px] bg-gradient-to-r from-[#6065FD] via-[#888CFF] to-[#7675FB] flex flex-col justify-center items-center">
+              <h2 className="text-[1.5rem] font-bold uppercase text-center">
+                REGISTRATION BEGINS
+              </h2>
+              <p className="text-[0.8rem]">SEP 29</p>
+            </div>
+            <div className="w-[80%] h-[7rem] rounded-[15px] bg-gradient-to-r from-[#FBDE75] via-[#fcc470] to-[#FCA969] flex flex-col justify-center items-center">
+              <h2 className="text-[1.5rem] font-bold uppercase text-center">
+                CONTRIBUTION BEGINS
+              </h2>
+              <p className="text-[0.8rem]">OCT 1</p>
+            </div>
+            <div className="w-[80%] h-[7rem] rounded-[15px] bg-gradient-to-r from-[#A94F9C] via-[#d469c4] to-[#FF84ED] flex flex-col justify-center items-center">
+              <h2 className="text-[1.5rem] font-bold uppercase text-center">
+                EXPERTS TALK
+              </h2>
+              <p className="text-[0.8rem]">OCT 7-8</p>
+            </div>
+            <div className="w-[80%] h-[7rem] rounded-[15px] bg-gradient-to-r from-[#FFD0D7] via-[#ffbdc6] to-[#FFAAB6] flex flex-col justify-center items-center">
+              <h2 className="text-[1.5rem] font-bold uppercase text-center">
+                MID EVALUTIONS
+              </h2>
+              <p className="text-[0.8rem]">OCT 15</p>
+            </div>
+            <div className="w-[80%] h-[7rem] rounded-[15px] bg-gradient-to-r from-[#DEA47A] via-[#eec0a6] to-[#FDDCD4] flex flex-col justify-center items-center">
+              <h2 className="text-[1.5rem] font-bold uppercase text-center">
+                EXPERTS TALK
+              </h2>
+              <p className="text-[0.8rem]">OCT 21</p>
+            </div>
+            <div className="w-[80%] h-[7rem] rounded-[15px] bg-gradient-to-r from-[#d0ffd3] via-[#bdffc6] to-[#aaffb7] flex flex-col justify-center items-center">
+              <h2 className="text-[1.5rem] font-bold uppercase text-center">
+                END EVALUTIONS
+              </h2>
+              <p className="text-[0.8rem]">OCT 29-30</p>
+            </div>
+            <div className="w-[80%] h-[7rem] rounded-[15px] bg-gradient-to-r from-[#de7a8b] via-[#eea6a6] to-[#fdd4db] flex flex-col justify-center items-center">
+              <h2 className="text-[1.5rem] font-bold uppercase text-center">
                 SWAGS AND CERTIFICATES
               </h2>
               <p className="text-[0.8rem]">NOV 1-5</p>

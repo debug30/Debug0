@@ -7,9 +7,9 @@ import Sidebar from "../../container/dashboard/Sidebar";
 const Dashboard = () => {
   const { selectedFeed } = useSelector((state: any) => state.dashboard);
   return (
-    <div className="p-[2rem_4rem] w-full h-full absolute">
+    <div className="md:p-[2rem_4rem] p-2 w-full h-max absolute">
       {/* <NavBar /> */}
-      <div className="flex flex-row h-full">
+      <div className="flex md:flex-row flex-col h-full">
         <Sidebar />
         {selectedFeed === "MY PR" && <Feed />}
         {selectedFeed === "LEADERBOARD" && <LeaderBoard />}

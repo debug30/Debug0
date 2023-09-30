@@ -9,7 +9,7 @@ import Contact from "../../components/contact/Contact";
 
 const Home = () => {
   return (
-    <div className="p-[2rem_4rem]">
+    <div className="px-6 py-4 md:p-[2rem_4rem]">
       <NavBar />
       <Socials />
       <Hero />

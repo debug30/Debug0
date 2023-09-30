@@ -7,10 +7,11 @@ import { chooseRole } from "../../redux/register/registerActions";
 import maintainerLogo from "../../assets/images/screw-driver.png";
 import contributorLogo from "../../assets/images/puzzle.png";
 import GithubIcon from "../../components/icons/GitHub";
+import Loader from "../../utils/ui/Loader";
 
 const Register = () => {
   const dispatch = useDispatch();
-  const { registerAs } = useSelector((state: any) => state.register);
+  const { registerAs, isLoading } = useSelector((state: any) => state.register);
 
   const handleChooseRole = (role: any) => {
     dispatch(chooseRole(role));
@@ -25,12 +26,12 @@ const Register = () => {
   };
 
   return (
-    <div className="w-[40rem] box-border flex flex-col items-center bg-white text-black p-8 rounded-[20px] shadow-register">
+    <div className="md:w-[40rem] w-[20rem] box-border flex flex-col items-center bg-white text-black p-8 rounded-[20px] shadow-register">
       <div>
-        <h1 className="text-[3rem] mb-[1rem] font-bold text-[#5151a4] text-center uppercase">
+        <h1 className="md:text-[3rem] text-[2rem] md:mb-[1rem] mb-8 font-bold text-[#5151a4] text-center uppercase">
           LOGIN AS
         </h1>
-        <div className="flex flex-row gap-8">
+        <div className="flex md:flex-row flex-col gap-8">
           <div
             className={`flex flex-row gap-4 items-center justify-center p-4 rounded-[10px] font-semibold cursor-pointer hover:bg-[#7C81AD] hover:text-white shadow-registerBtn ${
               registerAs === "MAINTAINER" ? "bg-[#7C81AD] text-white" : ""
@@ -53,13 +54,15 @@ const Register = () => {
       </div>
       {registerAs && (
         <button
-          className="flex flex-row gap-8 items-center outline-none border-none bg-black rounded-[10px] px-16 py-4 text-white font-semibold mt-[2.5rem]"
+          className="flex flex-row gap-4 items-center outline-none relative border-none bg-black rounded-[10px] md:px-16 px-4 py-4 text-white font-semibold mt-[2.5rem]"
           onClick={handleLoginRequest}
+          disabled={isLoading}
         >
           <span>Login with GitHub</span>
           <span>
             <GithubIcon />
           </span>
+          {isLoading && <Loader />}
         </button>
       )}
       {/* {registerAs && (

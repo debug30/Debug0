@@ -1,5 +1,5 @@
 //react
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 //utils
 import { TeamCard } from "../../utils/ui/TeamCard";
@@ -12,7 +12,8 @@ import AngleLeft from "../icons/AngleLeft";
 import AngleRight from "../icons/AngleRight";
 
 const Team = () => {
-  const membersPerPage = 3;
+  const windowWidth = useRef(window.innerWidth);
+  const membersPerPage = windowWidth.current >= 786 ? 3 : 1;
   const [currentPage, setCurrentPage] = useState(0);
 
   const startIndex = currentPage * membersPerPage;
@@ -27,10 +28,10 @@ const Team = () => {
 
   return (
     <div className="w-full flex flex-col justify-center items-center" id="team">
-      <h2 className="text-[3rem] mt-[6rem] mb-[8rem] drop-shadow-custom uppercase text-highlightColor font-bold">
+      <h2 className="text-[3rem] mt-[6rem] mb-8 md:mb-[8rem] drop-shadow-custom uppercase text-highlightColor font-bold">
         OUR TEAM
       </h2>
-      <section className="flex flex-row gap-10 items-center justify-center w-full">
+      <section className="flex flex-row gap-4 items-center justify-center w-full">
         <div
           className="cursor-pointer"
           onClick={() =>

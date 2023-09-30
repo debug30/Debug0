@@ -41,9 +41,9 @@ const Hero = () => {
         <div className="flex flex-col items-center">
           <h2 className="text-[2.5rem] mb-4 drop-shadow-custom">
             Month long{" "}
-            <b className="text-highlightColor">Open Source Hackathon.</b>
+            <b className="text-highlightColor">Open Source Hackathon</b>
           </h2>
-          <p className="w-[60%]">
+          <p className="mt-12 md:w-[60%]">
             DEBUG.0 is a month-long celebration of open source software, where
             anyone can contribute to open source projects (whether a newbie or a
             experienced we are open to all) and earn free swags.
@@ -54,26 +54,30 @@ const Hero = () => {
             Countdown to{" "}
             <b className="text-highlightColor uppercase">DEBUG.0</b> begins!
           </h1>
-          <div className="flex flex-row gap-4 drop-shadow-custom">
+          <div className="flex flex-row gap-4 drop-shadow-custom mt-8 mb-8 md:m-0">
             <span className="flex flex-col">
-              <span className="text-[4rem] text-highlightColor font-bold">
+              <span className="text-[2rem] md:text-[4rem] text-highlightColor font-bold">
                 {days}
               </span>
-              <span className="text-[1.2rem]">Days</span>
+              <span className="text-[0.9rem] md:text-[1.2rem]">Days</span>
             </span>
-            <span className="text-[4rem] text-highlightColor font-bold">:</span>
+            <span className="text-[2rem] md:text-[4rem] text-highlightColor font-bold">
+              :
+            </span>
             <span className="flex flex-col">
-              <span className="text-[4rem] text-highlightColor font-bold">
+              <span className="text-[2rem] md:text-[4rem] text-highlightColor font-bold">
                 {hours}
               </span>
-              <span className="text-[1.2rem]">Hours</span>
+              <span className="text-[0.9rem] md:text-[1.2rem]">Hours</span>
             </span>
-            <span className="text-[4rem] text-highlightColor font-bold">:</span>
+            <span className="text-[2rem] md:text-[4rem] text-highlightColor font-bold">
+              :
+            </span>
             <span className="flex flex-col">
-              <span className="text-[4rem] text-highlightColor font-bold">
+              <span className="text-[2rem] md:text-[4rem] text-highlightColor font-bold">
                 {minutes}
               </span>
-              <span className="text-[1.2rem]">Minutes</span>
+              <span className="text-[0.9rem] md:text-[1.2rem]">Minutes</span>
             </span>
           </div>
         </div>

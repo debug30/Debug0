@@ -1,26 +1,37 @@
+import DiscordIcon from "../icons/Discord";
+
 export default function Contact() {
   const contactUsHandler = async () => {
     alert("Sent!");
   };
   return (
-    <div className="w-full mt-[8rem] flex justify-center" id="contact">
-      <div className="w-[90%] flex flex-col items-center gap-8 box-border py-6 rounded-[20px] bg-gradient-to-r from-[#4D58FF] to-[#78B4FF] shadow-custom">
+    <div className="w-full mt-[8rem] flex justify-center md:mb-0 mb-4" id="contact">
+      <div className="w-[90%] flex flex-col items-center md:gap-8 gap-4 box-border py-6 rounded-[20px] bg-gradient-to-r from-[#4D58FF] to-[#78B4FF] shadow-custom">
         <h2 className="uppercase font-bold text-[2.3rem]">CONTACT US</h2>
         <p className="w-[70%] text-center">
-          Visit official website for registration - https://debug0.tech/
+          Visit official website for registration -{" "}
+          <a
+            href="https://debug0.tech/"
+            target="_blank"
+            className="text-[#fbdb75]"
+          >
+            here
+          </a>
         </p>
-        <p className="w-[70%] text-center">
+        <p className="w-[70%] text-center md:block flex flex-col items-center">
           Join discord server for every information -
-          https://discord.gg/KmERJh2y
+          <span onClick={() => window.open("https://discord.gg/KmERJh2y")}>
+            <DiscordIcon fill="white" />
+          </span>
         </p>
-        <div className="w-[60%] h-16 rounded-[30px] bg-yellow-500 flex flex-row items-center box-border overflow-hidden relative">
+        <div className="md:w-[60%] w-[90%] h-12 rounded-[30px] md:mt-0 mt-4 bg-yellow-500 flex flex-row items-center box-border overflow-hidden relative">
           <input
             type="email"
-            className="w-full h-full focus:border-none focus:outline-none placeholder:text-[#E1E1E1] placeholder:text-[1rem] text-[#4d58ff] font-bold text-[1.2rem] text-center"
+            className="w-full h-full focus:border-none focus:outline-none placeholder:text-[#E1E1E1] placeholder:text-[1rem] text-[#4d58ff] font-bold text-[1rem] text-center"
             placeholder="Enter Your Email Here..."
           />
           <button
-            className="absolute right-1 bottom-[50%] translate-y-[50%] px-8 py-4 rounded-[30px] uppercase font-bold outline-none border-none bg-[#4d58ff]"
+            className="absolute right-1 bottom-[50%] translate-y-[50%] px-4 py-2 rounded-[30px] uppercase font-bold outline-none border-none bg-[#4d58ff]"
             onClick={contactUsHandler}
           >
             SEND

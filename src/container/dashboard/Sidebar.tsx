@@ -1,16 +1,18 @@
 import { useSelector, useDispatch } from "react-redux";
+import { useNavigate } from "react-router";
 
 import { setSelectedFeed } from "../../redux/dashboard/dashboardActions";
+import { logoutUser } from "../../redux/register/registerActions";
 
 const Sidebar = () => {
   const { userData } = useSelector((state: any) => state.user);
   const { selectedFeed } = useSelector((state: any) => state.dashboard);
   const dispatch = useDispatch();
 
-  console.log(selectedFeed);
+  const navigate = useNavigate();
 
   return (
-    <div className="w-[18rem] h-full flex flex-col items-center justify-between px-6 pt-16 pb-4 rounded-[10px_0_0_10px] bg-opacity-5 backdrop-blur-md bg-[#7886c3] border-[1px] border-[#7886c342]">
+    <div className="md:w-[18rem] w-full h-full md:h-[100vh] flex flex-col items-center justify-between px-6 pt-16 pb-4 rounded-[10px_10px_0_0] md:rounded-[10px_0_0_10px] bg-opacity-5 backdrop-blur-md bg-[#7886c3] border-[1px] border-[#7886c342]">
       <h1 className="text-[1.7rem] font-extrabold select-none">DEBUG.0</h1>
       <div className="w-full flex flex-col gap-2">
         <div
@@ -32,6 +34,31 @@ const Sidebar = () => {
           }}
         >
           LEADERBOARD
+        </div>
+        <div
+          className={`h-[3rem] w-full box-border flex flex-row items-center justify-evenly text-white font-normal hover:font-bold p-3 hover:border-[1px] hover:border-[#7886c342] rounded-[8px] cursor-pointer hover:bg-[#ab78c317] uppercase`}
+          onClick={() => {
+            dispatch(logoutUser());
+            navigate("/");
+          }}
+        >
+          LOGOUT
+          <span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              className="w-6 h-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9"
+              />
+            </svg>
+          </span>
         </div>
       </div>
       <div
