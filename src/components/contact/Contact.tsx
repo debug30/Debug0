@@ -5,11 +5,14 @@ export default function Contact() {
     alert("Sent!");
   };
   return (
-    <div className="w-full mt-[8rem] flex justify-center md:mb-0 mb-4" id="contact">
+    <div
+      className="w-full mt-[8rem] flex justify-center md:mb-0 mb-4"
+      id="contact"
+    >
       <div className="w-[90%] flex flex-col items-center md:gap-8 gap-4 box-border py-6 rounded-[20px] bg-gradient-to-r from-[#4D58FF] to-[#78B4FF] shadow-custom">
         <h2 className="uppercase font-bold text-[2.3rem]">CONTACT US</h2>
         <p className="w-[70%] text-center">
-          Visit official website for registration -{" "}
+          Visit official website for registration -&nbsp;
           <a
             href="https://debug0.tech/"
             target="_blank"
@@ -18,12 +21,15 @@ export default function Contact() {
             here
           </a>
         </p>
-        <p className="w-[70%] text-center md:block flex flex-col items-center">
-          Join discord server for every information -
-          <span onClick={() => window.open("https://discord.gg/KmERJh2y")}>
+        <div className="w-[70%] text-center flex flex-col md:flex-row items-center justify-center">
+          <span>Join discord server for every information -&nbsp;</span>
+          <span
+            className="cursor-pointer"
+            onClick={() => window.open("https://discord.gg/KmERJh2y")}
+          >
             <DiscordIcon fill="white" />
           </span>
-        </p>
+        </div>
         <div className="md:w-[60%] w-[90%] h-12 rounded-[30px] md:mt-0 mt-4 bg-yellow-500 flex flex-row items-center box-border overflow-hidden relative">
           <input
             type="email"
