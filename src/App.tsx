@@ -81,8 +81,6 @@ function App() {
   useEffect(() => {
     if (authorized && token) {
       setLoggedIn(true);
-    } else {
-      setLoggedIn(false);
     }
   }, [authorized, token]);
 
