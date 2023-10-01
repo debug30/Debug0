@@ -16,16 +16,17 @@ const Register = () => {
   const handleChooseRole = (role: any) => {
     dispatch(chooseRole(role));
   };
-  
+
   const handleLoginRequest = () => {
     window.location.assign(
-      `https://github.com/login/oauth/authorize?client_id=${
+      `https://github.com/login/oauth/authorize/?client_id=${
         import.meta.env.VITE_GITHUB_CLIENT_ID
-      }&redirect_uri=${
+      }&redirect_uri=${`${
         import.meta.env.NODE_ENV === "production"
           ? import.meta.env.VITE_REDIRECT_URI
           : import.meta.env.VITE_REDIRECT_URI_DEV
-      }/?registeredAs=${registerAs}
+      }
+      /?registeredAs=${registerAs}`}
       }&allow_signup&scope=user:email%20user:name`
     );
   };
@@ -63,7 +64,7 @@ const Register = () => {
           onClick={handleLoginRequest}
           disabled={isLoading}
         >
-          <span>Login with GitHub</span>
+          <span>Continue with GitHub</span>
           <span>
             <GithubIcon />
           </span>
