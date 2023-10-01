@@ -26,8 +26,8 @@ const Register = () => {
           ? import.meta.env.VITE_REDIRECT_URI
           : import.meta.env.VITE_REDIRECT_URI_DEV
       }
-      /?registeredAs=${registerAs}`}
-      }&allow_signup&scope=user:email%20user:name`
+      ?registeredAs=${registerAs}`}
+      &allow_signup&scope=user:email%20user:name`
     );
   };
 
