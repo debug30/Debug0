@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 const Hero = () => {
-  const eventDate = new Date("October 1, 2023 00:00:00").getTime();
+  const eventDate = new Date("October 30, 2023 00:00:00").getTime();
 
   const [days, setDays] = useState(0);
   const [hours, setHours] = useState(0);
@@ -38,21 +38,23 @@ const Hero = () => {
   return (
     <div className="w-[100%] mt-[3rem] flex justify-center">
       <div className="w-[80%] text-center">
-        <div className="flex flex-col items-center">
-          <h2 className="text-[2.5rem] mb-4 drop-shadow-custom">
+        <div className="flex flex-col items-center]">
+          <h2 className="text-[2rem] drop-shadow-custom">
             Month long{" "}
             <b className="text-highlightColor">Open Source Hackathon</b>
           </h2>
-          <p className="mt-12 md:w-[60%]">
+          {/* <p className="mt-12 md:w-[70%]">
             DEBUG.0 is a month-long celebration of open source software, where
             anyone can contribute to open source projects (whether a newbie or a
             experienced we are open to all) and earn free swags.
-          </p>
+          </p> */}
         </div>
         <div className="flex flex-col items-center">
-          <h1 className="text-[3rem] mt-[2rem] mb-[2rem] drop-shadow-custom">
-            Countdown to{" "}
-            <b className="text-highlightColor uppercase">DEBUG.0</b> begins!
+          <h1 className="text-[4rem] mt-[2rem] mb-[2rem] drop-shadow-custom">
+            <b className="text-highlightColor uppercase">
+              DEBUG.0 in Full Swing
+            </b>
+            <p className="text-[2.5rem] mt-4">Time Left</p>
           </h1>
           <div className="flex flex-row gap-4 drop-shadow-custom mt-8 mb-8 md:m-0">
             <span className="flex flex-col">

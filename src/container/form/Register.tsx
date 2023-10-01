@@ -16,12 +16,17 @@ const Register = () => {
   const handleChooseRole = (role: any) => {
     dispatch(chooseRole(role));
   };
-
+  
   const handleLoginRequest = () => {
     window.location.assign(
       `https://github.com/login/oauth/authorize?client_id=${
         import.meta.env.VITE_GITHUB_CLIENT_ID
-      }&redirect_uri=${`https://debug0.tech/?registeredAs=${registerAs}`}&allow_signup&scope=user:email%20user:name`
+      }&redirect_uri=${
+        import.meta.env.NODE_ENV === "production"
+          ? import.meta.env.VITE_REDIRECT_URI
+          : import.meta.env.VITE_REDIRECT_URI_DEV
+      }/?registeredAs=${registerAs}
+      }&allow_signup&scope=user:email%20user:name`
     );
   };
 

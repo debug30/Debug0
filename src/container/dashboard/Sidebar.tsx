@@ -16,6 +16,7 @@ const Sidebar = () => {
     dispatch(logoutUser());
     const timeoutId = setTimeout(() => {
       navigate("/");
+      window.location.reload();
     }, 1000);
     dispatch(setLoading(false));
 

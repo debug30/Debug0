@@ -46,6 +46,7 @@ function App() {
         dispatch(authoriseWithGithubSuccess());
         dispatch(getUserData(authData.token));
         navigate("/dashboard");
+        window.location.reload();
       }
     }, 2000);
 
@@ -81,6 +82,8 @@ function App() {
   useEffect(() => {
     if (authorized && token) {
       setLoggedIn(true);
+    } else {
+      setLoggedIn(false);
     }
   }, [authorized, token]);
 
