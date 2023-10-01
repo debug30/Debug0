@@ -54,7 +54,6 @@ function* getUser(action: any): any {
     }
 
     yield put(setLoading(false));
-    window.location.reload();
   } catch (error: any) {
     console.error(error);
     yield put(setLoading(false));
