@@ -19,7 +19,7 @@ const Register = () => {
   
   const handleLoginRequest = () => {
     window.location.assign(
-      `https://github.com/login/oauth/authorize?client_id=${
+      `https://github.com/login/oauth/authorize/?client_id=${
         import.meta.env.VITE_GITHUB_CLIENT_ID
       }&redirect_uri=${
         import.meta.env.NODE_ENV === "production"
@@ -63,7 +63,7 @@ const Register = () => {
           onClick={handleLoginRequest}
           disabled={isLoading}
         >
-          <span>Login with GitHub</span>
+          <span>Continue with GitHub</span>
           <span>
             <GithubIcon />
           </span>
