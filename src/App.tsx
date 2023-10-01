@@ -46,6 +46,7 @@ function App() {
         dispatch(authoriseWithGithubSuccess());
         dispatch(getUserData(authData.token));
         navigate("/dashboard");
+        window.location.reload();
       }
     }, 2000);
 

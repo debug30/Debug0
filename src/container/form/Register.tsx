@@ -16,7 +16,7 @@ const Register = () => {
   const handleChooseRole = (role: any) => {
     dispatch(chooseRole(role));
   };
-
+  
   const handleLoginRequest = () => {
     window.location.assign(
       `https://github.com/login/oauth/authorize?client_id=${

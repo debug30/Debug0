@@ -54,13 +54,14 @@ function* getUser(action: any): any {
     }
 
     yield put(setLoading(false));
+    window.location.reload();
   } catch (error: any) {
     console.error(error);
     yield put(setLoading(false));
     window.location.assign(
       import.meta.env.VITE_NODE_ENV === "development"
-        ? "http://localhost:5173/"
-        : "https://debug0.tech/"
+        ? import.meta.env.VITE_LOCAL_URL
+        : import.meta.env.VITE_REDIRECT_URI
     );
   }
 }
@@ -69,7 +70,6 @@ function* logoutUserSaga() {
   localStorage.removeItem(`${import.meta.env.VITE_LOCALSTORAGE_PREFIX}auth`);
   localStorage.removeItem(`${import.meta.env.VITE_LOCALSTORAGE_PREFIX}user`);
   yield put({ type: LOGOUT_USER });
-  
 }
 
 export function* watchGetUser() {
