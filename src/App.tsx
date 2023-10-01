@@ -83,7 +83,7 @@ function App() {
     if (authorized && token) {
       setLoggedIn(true);
     } else {
-      setLoggedIn;
+      setLoggedIn(false);
     }
   }, [authorized, token]);
 
