@@ -12,6 +12,8 @@ import {
 
 import classes from "./navbar.module.css";
 
+import debug0Logo from "../../assets/images/Debug0Logo.png";
+
 export default function NavBar() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -34,8 +36,10 @@ export default function NavBar() {
   };
 
   return (
-    <div className="w-[100%] flex flex-row justify-between items-center box-border py-[1rem]">
-      <h2 className="font-extrabold text-[1.3rem]">LOGO</h2>
+    <div className="w-[100%] h-[5rem] flex flex-row justify-between items-center box-border py-[1rem]">
+      <h2 className="font-extrabold text-[1.3rem] h-full">
+        <img src={debug0Logo} alt="LOGO" className="h-full"/>
+      </h2>
       {!authorized && windowWidth < 768 && (
         <div onClick={handleOpenSideNav} className="space-y-2 cursor-pointer">
           <span className="block w-5 h-0.5 bg-white"></span>
@@ -49,7 +53,10 @@ export default function NavBar() {
             !openSideNav && windowWidth < 786 ? "hidden" : ""
           } flex flex-col items-center h-[100vh] w-[100vw] fixed z-50 top-0 left-0 text-center py-16 md:py-0 md:h-full md:w-full md:relative md:flex-row md:justify-between`}
         >
-          <div className="md:hidden block absolute top-8 right-8" onClick={handleCloseSideNav}>
+          <div
+            className="md:hidden block absolute top-8 right-8"
+            onClick={handleCloseSideNav}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"

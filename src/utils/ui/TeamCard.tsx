@@ -1,4 +1,5 @@
 //icons
+import DefaultUser from "../../components/icons/DefaultUser";
 import Github from "../../components/icons/GitHub";
 import LinkedinIcon from "../../components/icons/LinkedInIcon";
 
@@ -25,11 +26,14 @@ export function TeamCard(props: ITeamCardProps) {
           className="w-[40px] h-[40px] rounded-[50%] text-black font-bold relative before:absolute before:top-[-2.5px] before:left-[-2.5px] before:box-border before:content-[''] before:w-[45px] before:h-[45px] before:rounded-[50%] before:z-[-1] before:bg-gradient-to-b from-[#9af5ff] to-[#a900cb] cursor-pointer"
           onClick={() => window.open(props.image, "_blank")}
         >
-          <img
-            src={props.image}
-            alt="user-profile-picture"
-            className="w-full h-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 object-cover rounded-[50%]"
-          />
+          {props.image && (
+            <img
+              src={props.image}
+              alt="user-profile-picture"
+              className="w-full h-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 object-cover rounded-[50%]"
+            />
+          )}
+          <DefaultUser />
         </div>
         <h3 className="capitalize font-bold text-[1.3rem]">{props.position}</h3>
       </div>
