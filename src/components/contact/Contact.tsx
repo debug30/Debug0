@@ -1,8 +1,18 @@
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+
+import { postContactUsEmail } from "../../redux/misc/miscActions";
+
 import DiscordIcon from "../icons/Discord";
 
 export default function Contact() {
-  const contactUsHandler = async () => {
-    alert("Sent!");
+  const [email, setEmail] = useState("");
+  const dispatch = useDispatch();
+
+  const contactUsHandler = async (e: any) => {
+    e.preventDefault();
+    dispatch(postContactUsEmail(email));
+    setEmail("");
   };
   return (
     <div
@@ -30,19 +40,25 @@ export default function Contact() {
             <DiscordIcon fill="white" />
           </span>
         </div>
-        <div className="md:w-[60%] w-[90%] h-12 rounded-[30px] md:mt-0 mt-4 bg-yellow-500 flex flex-row items-center box-border overflow-hidden relative">
+        <form
+          onSubmit={contactUsHandler}
+          className="md:w-[60%] w-[90%] h-12 rounded-[30px] md:mt-0 mt-4 bg-yellow-500 flex flex-row items-center box-border overflow-hidden relative"
+        >
           <input
             type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
             className="w-full h-full focus:border-none focus:outline-none placeholder:text-[#E1E1E1] placeholder:text-[1rem] text-[#4d58ff] font-bold text-[1rem] text-center"
             placeholder="Enter Your Email Here..."
           />
           <button
+            type="submit"
             className="absolute right-1 bottom-[50%] translate-y-[50%] px-4 py-2 rounded-[30px] uppercase font-bold outline-none border-none bg-[#4d58ff]"
-            onClick={contactUsHandler}
           >
             SEND
           </button>
-        </div>
+        </form>
       </div>
     </div>
   );
