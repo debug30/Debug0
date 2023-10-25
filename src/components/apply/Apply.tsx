@@ -1,7 +1,7 @@
 //redux
 import { useDispatch, useSelector } from "react-redux";
 import {
-  openModal,
+  // openModal,
   closeModal,
   chooseRole,
 } from "../../redux/register/registerActions";
@@ -17,9 +17,9 @@ export default function Apply() {
   const { isModalOpen } = useSelector((state: any) => state.register);
   const dispatch = useDispatch();
 
-  const handleOpenRegisterForm = () => {
-    dispatch(openModal());
-  };
+  // const handleOpenRegisterForm = () => {
+  //   dispatch(openModal());
+  // };
 
   const handleCloseRegisterForm = () => {
     dispatch(closeModal());

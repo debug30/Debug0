@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { Link } from "react-scroll";
 
 //actions
-import { openModal } from "../../redux/register/registerActions";
+// import { openModal } from "../../redux/register/registerActions";
 import {
   closeSidebar,
   openSidebar,
@@ -30,10 +30,10 @@ export default function NavBar() {
     dispatch(openSidebar());
   };
 
-  const handleOpenRegisterModal = () => {
-    dispatch(closeSidebar());
-    dispatch(openModal());
-  };
+  // const handleOpenRegisterModal = () => {
+  //   dispatch(closeSidebar());
+  //   dispatch(openModal());
+  // };
 
   return (
     <div className="w-[100%] h-[5rem] flex flex-row justify-between items-center box-border py-[1rem]">
