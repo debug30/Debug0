@@ -6,6 +6,7 @@ import createSagaMiddleware from "@redux-saga/core";
 import registerReducer from "./register/registerReducer";
 import userReducer from "./user/userReducers";
 import dashReducer from "./dashboard/dashboardReducers";
+import miscReducer from "./misc/miscReducer";
 
 import rootSaga from "./rootSaga";
 
@@ -16,6 +17,7 @@ const store = configureStore({
     register: registerReducer,
     user: userReducer,
     dashboard: dashReducer,
+    misc: miscReducer,
   },
   middleware: [sagaMiddleware],
 });

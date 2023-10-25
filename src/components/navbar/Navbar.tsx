@@ -12,6 +12,8 @@ import {
 
 import classes from "./navbar.module.css";
 
+import debug0Logo from "../../assets/images/Debug0Logo.png";
+
 export default function NavBar() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -34,8 +36,10 @@ export default function NavBar() {
   };
 
   return (
-    <div className="w-[100%] flex flex-row justify-between items-center box-border py-[1rem]">
-      <h2 className="font-extrabold text-[1.3rem]">LOGO</h2>
+    <div className="w-[100%] h-[5rem] flex flex-row justify-between items-center box-border py-[1rem]">
+      <h2 className="font-extrabold text-[1.3rem] h-full">
+        <img src={debug0Logo} alt="LOGO" className="h-full"/>
+      </h2>
       {!authorized && windowWidth < 768 && (
         <div onClick={handleOpenSideNav} className="space-y-2 cursor-pointer">
           <span className="block w-5 h-0.5 bg-white"></span>
