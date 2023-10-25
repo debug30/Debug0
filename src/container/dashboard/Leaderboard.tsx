@@ -85,10 +85,7 @@ const LeaderBoard = () => {
 
   const handleOpenPRDetails = (i: number) => {
     setToggleOpen((prev) => (prev === i ? -1 : i));
-    console.log(i);
   };
-
-  console.log(toggleOpen);
 
   return (
     <div className="w-full h-[100vh] flex flex-col items-center md:p-8 p-4  md:rounded-[0px_10px_10px_0px] rounded-[0px_0_10px_10px] bg-opacity-5 backdrop-blur-md bg-[#7886c3] border-[1px] border-[#7886c342]">

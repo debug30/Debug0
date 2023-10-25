@@ -20,7 +20,6 @@ const Home = () => {
     useSelector((state: any) => state.misc);
   useEffect(() => {
     if (Object.keys(postContactResp).length > 0 && !postContactError) {
-      console.log(postContactResp);
       toast.info("We'll contact you shortly!", {
         position: "bottom-right",
         autoClose: 5000,
