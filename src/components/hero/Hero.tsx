@@ -12,7 +12,7 @@ const Hero = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       const now = new Date().getTime();
-      const timeLeft = eventDate - now;
+      const timeLeft = eventDate - now >= 0 ? eventDate - now : 0;
 
       const daysLeft = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
       const hoursLeft = Math.floor(
@@ -84,7 +84,7 @@ const Hero = () => {
           </div>
         </div>
         <h1 className="text-[3rem] mt-[2rem] mb-[2rem] drop-shadow-custom uppercase text-highlightColor font-bold">
-          REGISTER NOW
+          REGISTER OVER
         </h1>
       </div>
     </div>

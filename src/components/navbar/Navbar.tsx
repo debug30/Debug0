@@ -49,7 +49,10 @@ export default function NavBar() {
             !openSideNav && windowWidth < 786 ? "hidden" : ""
           } flex flex-col items-center h-[100vh] w-[100vw] fixed z-50 top-0 left-0 text-center py-16 md:py-0 md:h-full md:w-full md:relative md:flex-row md:justify-between`}
         >
-          <div className="md:hidden block absolute top-8 right-8" onClick={handleCloseSideNav}>
+          <div
+            className="md:hidden block absolute top-8 right-8"
+            onClick={handleCloseSideNav}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -124,10 +127,10 @@ export default function NavBar() {
           </nav>
 
           <button
-            className="outline-none border-none bg-gradient-to-r from-[#9AFFFF] to-[#478EEE] relative px-16 py-2 rounded-[8px] shadow-custom"
-            onClick={handleOpenRegisterModal}
+            className="outline-none border-none bg-gradient-to-r from-[#9AFFFF] to-[#478EEE] relative px-16 py-2 rounded-[8px] shadow-custom cursor-not-allowed"
+            // onClick={handleOpenRegisterModal}
           >
-            Register
+            Over
           </button>
         </div>
       )}

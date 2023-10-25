@@ -58,9 +58,9 @@ export default function Apply() {
       <div className="mt-10">
         <button
           className="outline-none border-none bg-gradient-to-r from-[#9AFFFF] to-[#478EEE] md:px-32 px-20 md:py-2 py-4 text-[1.2rem] md:text-[1rem] rounded-[8px] shadow-custom"
-          onClick={handleOpenRegisterForm}
+          // onClick={handleOpenRegisterForm}
         >
-          Apply
+          Over
         </button>
       </div>
     </div>
