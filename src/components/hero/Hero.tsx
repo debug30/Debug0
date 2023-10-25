@@ -84,7 +84,7 @@ const Hero = () => {
           </div>
         </div>
         <h1 className="text-[3rem] mt-[2rem] mb-[2rem] drop-shadow-custom uppercase text-highlightColor font-bold">
-          REGISTER OVER
+          REGISTERATION OVER
         </h1>
       </div>
     </div>
